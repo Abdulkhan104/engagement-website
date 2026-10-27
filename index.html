@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Munir & Afreen | Engagement Invitation</title>
-
+<meta name="theme-color" content="#b58a78">
 <meta name="description"
 content="Join Munir and Afreen's engagement celebration on 16 November 2026.">
 
-<meta name="theme-color" content="#fff1ed">
-
 <style>
 :root {
-  --rose: #d99591;
-  --rose-dark: #a95f69;
-  --rose-light: #ffe1df;
-  --gold: #c49a66;
-  --cream: #fffaf7;
-  --text: #75434b;
-  --dark: #60343e;
+  /* Digital approximation of a metallic rose-gold palette */
+  --rose-gold: #B58A78;
+  --rose-light: #E8C9B8;
+  --rose-pale: #F8EAE2;
+  --rose-deep: #875B50;
+  --ivory: #FFF9F3;
+  --burgundy: #633B40;
+  --gold: #C7A36B;
 }
 
 * {
@@ -28,142 +27,136 @@ content="Join Munir and Afreen's engagement celebration on 16 November 2026.">
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Georgia, "Times New Roman", serif;
-  background: #fff6f2;
-  color: var(--text);
-  min-height: 100vh;
+  color: var(--burgundy);
+  background: var(--ivory);
   overflow-x: hidden;
 }
 
-/* Soft rose-gold background */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background:
-    radial-gradient(circle at 10% 15%, #ffe2df, transparent 38%),
-    radial-gradient(circle at 90% 80%, #f8d6cb, transparent 40%),
-    linear-gradient(135deg, #fffaf7, #fce9e5, #fff5ef);
+body.locked {
+  overflow: hidden;
 }
 
-/* Decorative background glow */
+/* Welcome screen */
 
-.glow {
+.welcome {
   position: fixed;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: rgba(217, 149, 145, 0.13);
-  filter: blur(40px);
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, #fff8f0, transparent 55%),
+    linear-gradient(145deg, #e8c9b8, #b58a78, #f4dfd2);
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.welcome.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.welcome-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 65px 25px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.85);
+  outline: 1px solid rgba(135,91,80,.4);
+  outline-offset: -10px;
+  background: rgba(255,249,243,.78);
+  box-shadow: 0 20px 70px #754a4430;
+}
+
+.welcome-rose {
+  font-size: 55px;
+  margin-bottom: 18px;
+  animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.welcome h1 {
+  font-size: clamp(34px, 8vw, 45px);
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--rose-deep);
+}
+
+.welcome p {
+  margin: 18px 0 28px;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--burgundy);
+}
+
+.open-button {
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #c7a18d, #986a5b);
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px #875b5030;
+  transition: transform .3s;
+}
+
+.open-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Invitation page */
+
+.page {
+  min-height: 100vh;
+  padding: 28px 14px;
+  background:
+    radial-gradient(ellipse at top, #fffdf8, transparent 65%),
+    linear-gradient(135deg, #fff9f3, #f5e2d7);
+}
+
+.invitation {
+  max-width: 620px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  padding: 60px 28px 40px;
+  background: rgba(255,253,249,.84);
+  border: 1px solid var(--rose-gold);
+  box-shadow: 0 15px 60px #875b501b;
+}
+
+/* Decorative frame */
+
+.invitation::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid #c7a36b99;
   pointer-events: none;
   z-index: -1;
 }
 
-.glow.one {
-  top: 5%;
-  left: -100px;
-}
-
-.glow.two {
-  right: -100px;
-  bottom: 5%;
-}
-
-/* Navigation */
-
-.navigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 13px 10px;
-  background: rgba(255, 250, 247, 0.88);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(196, 154, 102, 0.2);
-}
-
-.nav-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #e7c5c0;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.nav-dot.active {
-  background: var(--rose-dark);
-  transform: scale(1.35);
-}
-
-/* Screens */
-
-.screen {
-  min-height: 100vh;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  padding: 75px 17px 35px;
-}
-
-.screen.active {
-  display: flex;
-  animation: screenEnter 0.8s ease both;
-}
-
-@keyframes screenEnter {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Invitation card */
-
-.card {
-  position: relative;
-  width: 100%;
-  max-width: 470px;
-  min-height: 650px;
-  padding: 65px 27px 35px;
-  overflow: hidden;
-  text-align: center;
-  background: rgba(255, 250, 247, 0.84);
-  border: 1px solid #d8b28b;
-  border-radius: 5px;
-  box-shadow:
-    0 15px 55px rgba(139, 80, 83, 0.13),
-    inset 0 0 30px rgba(255, 223, 214, 0.3);
-}
-
-/* Double ornamental border */
-
-.card::before {
+.invitation::after {
   content: "";
   position: absolute;
-  inset: 10px;
-  border: 1px solid rgba(196, 154, 102, 0.65);
+  inset: 17px;
+  border: 1px solid #b58a7840;
   pointer-events: none;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border: 1px solid rgba(217, 149, 145, 0.35);
-  pointer-events: none;
+  z-index: -1;
 }
 
 .content {
@@ -171,235 +164,246 @@ body::before {
   z-index: 3;
 }
 
-/* Roses and floral decorations */
+/* Rose decorations */
 
-.rose {
+.flower {
   position: absolute;
-  z-index: 2;
-  font-size: 53px;
-  filter: drop-shadow(0 3px 5px rgba(139, 80, 83, 0.12));
+  z-index: 4;
+  font-size: clamp(42px, 9vw, 66px);
+  opacity: 0;
   pointer-events: none;
 }
 
-.rose.tl {
+.flower.tl {
   top: 15px;
   left: 17px;
-  animation: roseOpen 1.5s ease both;
 }
 
-.rose.tr {
+.flower.tr {
   top: 15px;
   right: 17px;
-  animation: roseOpen 1.5s ease 0.2s both;
 }
 
-.rose.bl {
+.flower.bl {
   bottom: 15px;
   left: 17px;
-  animation: roseOpen 1.5s ease 0.4s both;
 }
 
-.rose.br {
+.flower.br {
   bottom: 15px;
   right: 17px;
-  animation: roseOpen 1.5s ease 0.6s both;
 }
 
-@keyframes roseOpen {
-  from {
+.flower.bloom {
+  animation: bloom 1.6s cubic-bezier(.2,.8,.3,1) forwards;
+}
+
+.flower.tl.bloom {
+  transform-origin: top left;
+}
+
+.flower.tr.bloom {
+  transform-origin: top right;
+}
+
+.flower.bl.bloom {
+  transform-origin: bottom left;
+}
+
+.flower.br.bloom {
+  transform-origin: bottom right;
+}
+
+@keyframes bloom {
+  0% {
     opacity: 0;
-    transform: scale(0.2) rotate(-40deg);
+    transform: scale(0) rotate(-35deg);
   }
   70% {
     opacity: 1;
-    transform: scale(1.15) rotate(8deg);
+    transform: scale(1.12) rotate(6deg);
   }
-  to {
+  100% {
     opacity: 1;
     transform: scale(1) rotate(0);
   }
 }
 
+.bismillah {
+  font-size: 28px;
+  line-height: 1.9;
+  color: var(--rose-deep);
+  margin-bottom: 15px;
+}
+
 .eyebrow {
   font-family: Arial, sans-serif;
   font-size: 10px;
-  letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--rose-dark);
-  margin-bottom: 17px;
-}
-
-.bismillah {
-  font-size: 28px;
-  line-height: 1.8;
-  color: #9b6670;
-  margin-bottom: 16px;
+  letter-spacing: 3px;
+  color: var(--rose-deep);
+  margin-bottom: 18px;
 }
 
 h1 {
-  font-size: clamp(32px, 8vw, 45px);
-  font-weight: normal;
+  font-size: clamp(33px, 8vw, 48px);
   font-style: italic;
-  color: var(--dark);
-  line-height: 1.35;
+  font-weight: normal;
+  line-height: 1.3;
+  color: var(--burgundy);
 }
 
 .subtitle {
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.9;
-  margin-top: 18px;
-  color: #98636a;
+  margin-top: 17px;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--rose-deep);
 }
 
 .rings {
-  font-size: 49px;
-  margin: 22px 0 15px;
-  animation: float 3s ease-in-out infinite;
+  margin: 23px 0;
+  font-size: 54px;
+  animation: gentleFloat 3s ease-in-out infinite;
 }
 
-@keyframes float {
+@keyframes gentleFloat {
   50% {
     transform: translateY(-6px);
   }
 }
 
 .names {
-  font-size: clamp(32px, 8vw, 43px);
-  font-weight: normal;
+  font-size: clamp(35px, 8vw, 47px);
   font-style: italic;
-  line-height: 1.45;
-  color: #a75f6b;
+  font-weight: normal;
+  line-height: 1.5;
+  color: var(--rose-deep);
 }
 
 .ampersand {
-  color: var(--gold);
   font-size: 25px;
+  color: var(--gold);
 }
 
 .divider {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 13px;
-  margin: 23px 0;
+  gap: 14px;
+  margin: 25px 0;
   color: var(--gold);
 }
 
 .divider span {
-  width: 48px;
+  width: 55px;
   height: 1px;
-  background: var(--gold);
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.divider span:last-child {
+  transform: rotate(180deg);
 }
 
 .date {
-  font-size: 21px;
+  font-size: 22px;
   font-style: italic;
-  color: var(--dark);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .time {
-  margin-top: 8px;
+  margin-top: 7px;
   font-family: Arial, sans-serif;
   font-size: 13px;
   letter-spacing: 1px;
-  color: #98636a;
+  color: var(--rose-deep);
 }
 
-.venue-title {
-  font-size: 23px;
+.section {
+  margin-top: 42px;
+}
+
+.section-title {
+  font-size: 29px;
+  font-weight: normal;
   font-style: italic;
-  margin-top: 25px;
-  color: var(--dark);
+  color: var(--rose-deep);
+  margin-bottom: 17px;
 }
 
-.venue-address {
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.9;
-  margin-top: 8px;
-  color: #98636a;
+.message {
+  max-width: 450px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 2;
 }
 
-/* Islamic thoughts screen */
-
-.quote-mark {
-  font-size: 55px;
-  color: #d9a18d;
-  line-height: 1;
-  margin-bottom: 12px;
-}
-
-.quote {
-  font-size: 24px;
-  font-style: italic;
-  line-height: 1.8;
-  color: #824b56;
-  margin: 18px 0;
-}
-
-.quote-reference {
+.small-note {
+  margin-top: 14px;
   font-family: Arial, sans-serif;
   font-size: 11px;
-  letter-spacing: 1px;
-  line-height: 1.8;
-  color: #aa7776;
+  line-height: 1.9;
+  color: var(--rose-deep);
 }
 
-.family-title {
-  font-size: 31px;
-  line-height: 1.5;
-  font-style: italic;
-  font-weight: normal;
-  color: #a65e69;
-  margin-top: 30px;
-}
-
-.family-message {
-  font-size: 15px;
+.venue-box {
+  padding: 22px 12px;
+  margin-top: 20px;
+  border: 1px solid #c7a36b80;
+  background: linear-gradient(135deg, #fffaf5, #f6e4d9);
   line-height: 2;
-  margin-top: 18px;
-  color: #80535a;
-}
-
-/* Venue screen */
-
-.map-icon {
-  font-size: 55px;
-  margin: 20px 0;
+  font-size: 15px;
 }
 
 .venue-name {
-  font-size: 25px;
-  line-height: 1.5;
-  color: var(--dark);
-  margin: 15px 0;
+  font-size: 23px;
+  font-style: italic;
+  color: var(--burgundy);
 }
 
-.address-box {
-  margin: 25px 0;
-  padding: 20px 12px;
-  border: 1px solid #e1c4a7;
-  background: rgba(255, 231, 223, 0.45);
-  line-height: 2;
-  font-size: 15px;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22px;
 }
 
-.map-note {
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 20px;
+  border: 1px solid var(--rose-gold);
+  border-radius: 30px;
   font-family: Arial, sans-serif;
-  font-size: 11px;
-  line-height: 1.8;
-  color: #98636a;
-  margin-bottom: 22px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: .3s;
 }
 
-/* Thank-you screen */
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #c4a08c, #95695b);
+}
+
+.btn-secondary {
+  color: var(--rose-deep);
+  background: #fffaf6;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px #875b5020;
+}
+
+.thank-you {
+  margin-top: 42px;
+  padding-top: 32px;
+  border-top: 1px solid #c7a36b80;
+}
 
 .heart {
-  font-size: 55px;
-  margin: 20px 0;
-  animation: heartbeat 1.8s ease-in-out infinite;
+  font-size: 40px;
+  margin-bottom: 15px;
+  animation: heartbeat 2s ease-in-out infinite;
 }
 
 @keyframes heartbeat {
@@ -408,219 +412,175 @@ h1 {
   }
 }
 
-.thank-title {
-  font-size: 39px;
-  line-height: 1.4;
-  font-style: italic;
-  font-weight: normal;
-  color: #a65e69;
-}
-
-.thank-message {
-  font-size: 16px;
-  line-height: 2;
-  margin-top: 22px;
-  color: #80535a;
-}
-
-/* Buttons */
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 27px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 17px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border: 1px solid var(--rose);
-  transition: 0.3s;
-}
-
-.btn-primary {
-  color: white;
-  background: linear-gradient(135deg, #d9a08c, #b96e79);
-  border-color: transparent;
-  box-shadow: 0 5px 15px rgba(169, 95, 105, 0.17);
-}
-
-.btn-secondary {
-  color: #985a67;
-  background: rgba(255, 255, 255, 0.65);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 20px rgba(169, 95, 105, 0.2);
-}
-
 .footer {
-  margin-top: 26px;
+  margin-top: 25px;
   font-family: Arial, sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 2px;
-  color: #b28b64;
+  color: var(--rose-deep);
 }
 
 /* Falling rose petals */
 
-.petal {
+.petals {
   position: fixed;
-  top: -25px;
-  z-index: 30;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
-  font-size: 19px;
-  animation: petalFall linear forwards;
+  z-index: 50;
 }
 
-@keyframes petalFall {
+.petal {
+  position: absolute;
+  top: -35px;
+  opacity: 0;
+  animation: falling linear forwards;
+}
+
+@keyframes falling {
   0% {
-    transform: translateY(-10px) rotate(0deg);
     opacity: 0;
+    transform: translate3d(0,-20px,0) rotate(0deg);
   }
-  10% {
-    opacity: 0.8;
+  12% {
+    opacity: .85;
   }
   100% {
-    transform: translateY(110vh) rotate(450deg);
     opacity: 0;
+    transform: translate3d(45px,110vh,0) rotate(480deg);
   }
 }
 
-@media (max-width: 380px) {
-  .card {
-    padding: 62px 22px 32px;
-    min-height: 620px;
+/* Entrance reveal */
+
+.invitation {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.invitation.revealed {
+  animation: reveal 1.5s ease forwards;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 12px 7px;
   }
 
-  .rose {
-    font-size: 39px;
+  .invitation {
+    padding: 62px 22px 35px;
   }
 
-  .quote {
-    font-size: 21px;
+  .flower {
+    font-size: 40px;
+  }
+
+  .message {
+    font-size: 15px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
 </style>
 </head>
 
-<body>
+<body class="locked">
 
-<div class="glow one"></div>
-<div class="glow two"></div>
+<!-- First-time welcome overlay -->
+<div class="welcome" id="welcome">
+  <div class="welcome-card">
 
-<!-- Screen navigation indicators -->
-<nav class="navigation" aria-label="Invitation pages">
-  <button class="nav-dot active" onclick="showScreen(0)"
-          aria-label="Welcome page"></button>
-  <button class="nav-dot" onclick="showScreen(1)"
-          aria-label="Islamic blessing page"></button>
-  <button class="nav-dot" onclick="showScreen(2)"
-          aria-label="Venue page"></button>
-  <button class="nav-dot" onclick="showScreen(3)"
-          aria-label="Thank you page"></button>
-</nav>
+    <div class="welcome-rose">🌹</div>
 
+    <p class="eyebrow">Bismillah • With love and blessings</p>
 
-<!-- PAGE 1: WELCOME -->
-<section class="screen active">
+    <h1>Munir <span style="color:#c49a66">&amp;</span><br>Afreen</h1>
 
-  <article class="card">
+    <p>
+      Together with our families,<br>
+      we invite you to celebrate<br>
+      our beautiful beginning.
+    </p>
 
-    <span class="rose tl">🌹</span>
-    <span class="rose tr">🌿</span>
-    <span class="rose bl">🌸</span>
-    <span class="rose br">🌹</span>
+    <button class="open-button" id="openButton">
+      ✨ TAP TO OPEN INVITATION ✨
+    </button>
 
-    <div class="content">
+    <p style="font-size:11px;margin-top:24px">
+      Monday, 16 November 2026
+    </p>
 
-      <p class="bismillah" lang="ar" dir="rtl">
-        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-      </p>
+  </div>
+</div>
 
-      <p class="eyebrow">With joy in our hearts</p>
+<div class="petals" id="petals" aria-hidden="true"></div>
 
-      <h1>Engagement<br>Ceremony</h1>
+<main class="page">
 
-      <p class="subtitle">
-        Together with our families,<br>
-        we invite you to celebrate our special day
-      </p>
+<article class="invitation" id="invitation">
 
-      <div class="rings">💍</div>
+  <!-- Flowers bloom after the visitor clicks -->
+  <div class="flower tl">🌹</div>
+  <div class="flower tr">🌿</div>
+  <div class="flower bl">🌸</div>
+  <div class="flower br">🌹</div>
 
-      <h2 class="names">
-        Munir <span class="ampersand">&amp;</span> Afreen
-      </h2>
+  <div class="content">
 
-      <div class="divider">
-        <span></span> ✧ <span></span>
-      </div>
+    <!-- Main invitation -->
+    <p class="bismillah" lang="ar" dir="rtl">
+      بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+    </p>
 
-      <p class="date">Monday, 16 November 2026</p>
-      <p class="time">7:00 PM onwards</p>
+    <p class="eyebrow">With joy in our hearts</p>
 
-      <h2 class="venue-title">Our Special Day</h2>
+    <h1>Engagement<br>Ceremony</h1>
 
-      <p class="venue-address">
-        A beautiful beginning,<br>
-        surrounded by love and blessings.
-      </p>
+    <p class="subtitle">
+      Together with our families,<br>
+      we invite you to share our happiness.
+    </p>
 
-      <div class="buttons">
-        <button class="btn btn-primary" onclick="showScreen(1)">
-          ENTER INVITATION ✨
-        </button>
-      </div>
+    <div class="rings">💍</div>
 
-      <p class="footer">A BEAUTIFUL NEW BEGINNING</p>
+    <h2 class="names">
+      Munir <span class="ampersand">&amp;</span> Afreen
+    </h2>
 
+    <div class="divider">
+      <span></span> ✧ <span></span>
     </div>
-  </article>
-</section>
+
+    <p class="date">Monday, 16 November 2026</p>
+    <p class="time">7:00 PM onwards</p>
 
 
-<!-- PAGE 2: ISLAMIC BLESSINGS & FAMILY WELCOME -->
-<section class="screen">
+    <!-- Islamic blessing -->
+    <section class="section">
 
-  <article class="card">
+      <h2 class="section-title">A Prayer for Our Beginning</h2>
 
-    <span class="rose tl">🌹</span>
-    <span class="rose tr">🌸</span>
-    <span class="rose bl">🌿</span>
-    <span class="rose br">🌹</span>
-
-    <div class="content">
-
-      <p class="eyebrow">A prayer for a beautiful beginning</p>
-
-      <div class="quote-mark">❝</div>
-
-      <h1 style="font-size:34px;">A Blessing of Love</h1>
-
-      <p class="quote">
+      <p class="message">
         May Allah bless this beautiful beginning
         with love, mercy, happiness and endless barakah.
+        May He guide our families and fill our hearts
+        with peace, kindness and gratitude.
       </p>
 
-      <p class="quote-reference">
+      <p class="small-note">
         MAY ALLAH GRANT YOU BOTH GOODNESS AND BLESSINGS
       </p>
 
@@ -628,81 +588,51 @@ h1 {
         <span></span> ❀ <span></span>
       </div>
 
-      <h2 class="family-title">
-        Welcome to the<br>Sayyed Family
-      </h2>
+      <h2 class="section-title">Welcome to the Sayyed Family</h2>
 
-      <p class="family-message">
+      <p class="message">
         With grateful hearts and immense happiness,
-        we welcome you to share in the joy of
-        Munir and Afreen's engagement.
+        we welcome our family and friends to celebrate
+        this special occasion with Munir and Afreen.
 
         <br><br>
 
-        May this special occasion bring our families
-        closer together and fill our hearts with
-        beautiful memories.
+        Your presence, prayers and blessings will make
+        this day even more memorable.
       </p>
 
-      <div class="buttons">
-        <button class="btn btn-primary" onclick="showScreen(2)">
-          VIEW VENUE & MAP 📍
-        </button>
-
-        <button class="btn btn-secondary" onclick="showScreen(0)">
-          ← PREVIOUS PAGE
-        </button>
-      </div>
-
-      <p class="footer">LOVE • FAMILY • BLESSINGS</p>
-
-    </div>
-  </article>
-</section>
+    </section>
 
 
-<!-- PAGE 3: VENUE & MAP -->
-<section class="screen">
+    <!-- Venue -->
+    <section class="section">
 
-  <article class="card">
+      <h2 class="section-title">Join Us</h2>
 
-    <span class="rose tl">🌹</span>
-    <span class="rose tr">🌿</span>
-    <span class="rose bl">🌸</span>
-    <span class="rose br">🌹</span>
-
-    <div class="content">
-
-      <p class="eyebrow">We look forward to seeing you</p>
-
-      <h1 style="font-size:36px;">Join Us</h1>
-
-      <p class="subtitle">
-        Your presence will make our celebration
-        even more memorable.
+      <p class="message">
+        We look forward to celebrating this beautiful
+        moment with you.
       </p>
 
-      <div class="map-icon">📍</div>
+      <div class="venue-box">
 
-      <h2 class="venue-name">
-        Ruby Ratna Bhandar
-      </h2>
+        <h3 class="venue-name">Ruby Ratna Bhandar</h3>
 
-      <div class="address-box">
-        <strong>Engagement Ceremony</strong>
+        <p>
+          Datala Road<br>
+          Chandrapur, Maharashtra
+        </p>
+
         <br>
-        Datala Road
-        <br>
-        Chandrapur, Maharashtra
-        <br><br>
-        <strong>Monday, 16 November 2026</strong>
-        <br>
+
+        <strong>16 November 2026</strong><br>
         7:00 PM onwards
+
       </div>
 
-      <p class="map-note">
-        Tap below to open Google Maps and check
-        directions to the venue.
+      <p class="small-note">
+        Tap below to view directions to the venue.
+        Please verify the map pin before travelling.
       </p>
 
       <div class="buttons">
@@ -712,51 +642,30 @@ h1 {
           href="https://www.google.com/maps/dir/?api=1&amp;destination=Ruby+Ratna+Bhandar%2C+Datala+Road%2C+Chandrapur%2C+Maharashtra%2C+India"
           target="_blank"
           rel="noopener noreferrer">
-          OPEN GOOGLE MAPS ↗
+          📍 GET DIRECTIONS
         </a>
 
-        <button class="btn btn-secondary" onclick="showScreen(3)">
-          NEXT: THANK YOU ❤️
-        </button>
-
-        <button class="btn btn-secondary" onclick="showScreen(1)">
-          ← PREVIOUS PAGE
-        </button>
+        <a
+          class="btn btn-secondary"
+          href="https://www.google.com/local/place/fid/0x3bd2d7f70e064a11:0x3abbc23d6c411155/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3D1JOyoFjuWbnxSQO5NN13RA%26cb_client%3Dsearch.gws-prod.grass%26yaw%3D13.506413%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&amp;ik=CAISFjFKT3lvRmp1V2JueFNRTzVOTjEzUkE%3D"
+          target="_blank"
+          rel="noopener noreferrer">
+          🗺️ VIEW SHARED MAP LOCATION
+        </a>
 
       </div>
 
-      <p class="footer">YOUR PRESENCE IS OUR GIFT</p>
-
-    </div>
-  </article>
-</section>
+    </section>
 
 
-<!-- PAGE 4: THANK YOU -->
-<section class="screen">
-
-  <article class="card">
-
-    <span class="rose tl">🌹</span>
-    <span class="rose tr">🌸</span>
-    <span class="rose bl">🌿</span>
-    <span class="rose br">🌹</span>
-
-    <div class="content">
-
-      <p class="eyebrow">With love and gratitude</p>
+    <!-- Thank-you section -->
+    <section class="thank-you">
 
       <div class="heart">💗</div>
 
-      <h1 class="thank-title">
-        Thank You!
-      </h1>
+      <h2 class="section-title">Thank You!</h2>
 
-      <div class="divider">
-        <span></span> ✧ <span></span>
-      </div>
-
-      <p class="thank-message">
+      <p class="message">
         Thank you for being a part of our happiness.
 
         <br><br>
@@ -766,12 +675,11 @@ h1 {
 
         <br><br>
 
-        We look forward to celebrating this
-        beautiful occasion with you.
+        We look forward to sharing this beautiful
+        occasion with you.
       </p>
 
-      <h2 class="family-title">
-        With Love,<br>
+      <h2 class="names" style="margin-top:25px">
         Munir &amp; Afreen
       </h2>
 
@@ -782,155 +690,119 @@ h1 {
 
       <div class="buttons">
 
-        <button class="btn btn-primary" onclick="showScreen(0)">
-          ↻ REVISIT INVITATION
-        </button>
-
-        <button class="btn btn-secondary" onclick="shareInvitation()">
-          SHARE WITH FAMILY 💌
-        </button>
+        <a class="btn btn-primary" id="shareButton" href="#">
+          💌 SHARE INVITATION
+        </a>
 
       </div>
 
-      <p class="footer">MADE WITH LOVE & PRAYERS</p>
+      <p class="footer">MADE WITH LOVE &amp; PRAYERS</p>
 
-    </div>
-  </article>
-</section>
+    </section>
 
+  </div>
+</article>
+
+</main>
 
 <script>
-  // -------------------------------------
-  // NAVIGATION BETWEEN THE FOUR SCREENS
-  // -------------------------------------
+const welcome = document.getElementById("welcome");
+const invitation = document.getElementById("invitation");
+const petalsContainer = document.getElementById("petals");
+const flowers = document.querySelectorAll(".flower");
+const openButton = document.getElementById("openButton");
 
-  const screens = document.querySelectorAll(".screen");
-  const dots = document.querySelectorAll(".nav-dot");
+let opened = false;
+let petalTimer = null;
 
-  let currentScreen = 0;
-
-  function showScreen(index) {
-    if (index < 0 || index >= screens.length) return;
-
-    currentScreen = index;
-
-    screens.forEach((screen, i) => {
-      screen.classList.toggle("active", i === index);
-    });
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
-    });
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-    // Restart the flower animation on the selected screen.
-    const card = screens[index].querySelector(".card");
-
-    card.querySelectorAll(".rose").forEach(rose => {
-      rose.style.animation = "none";
-      void rose.offsetWidth;
-      rose.style.animation = "";
-    });
-
-    // Create fresh petals on each screen transition.
-    createPetals();
+function createPetals(count = 30) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
   }
 
+  const symbols = ["🌸", "🌹", "🌺", "✿"];
 
-  // -------------------------------------
-  // ROSE PETAL ANIMATION
-  // -------------------------------------
+  for (let i = 0; i < count; i++) {
+    const petal = document.createElement("span");
 
-  function createPetals() {
-    if (window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches) {
-      return;
-    }
+    petal.className = "petal";
+    petal.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
 
-    const symbols = ["🌸", "🌹", "🌷"];
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.fontSize = (12 + Math.random() * 14) + "px";
 
-    for (let i = 0; i < 12; i++) {
-      const petal = document.createElement("span");
+    const duration = 5 + Math.random() * 5;
+    const delay = Math.random() * 2;
 
-      petal.className = "petal";
-      petal.textContent =
-        symbols[Math.floor(Math.random() * symbols.length)];
+    petal.style.animationDuration = duration + "s";
+    petal.style.animationDelay = delay + "s";
 
-      petal.style.left = Math.random() * 100 + "vw";
+    petalsContainer.appendChild(petal);
 
-      petal.style.animationDuration =
-        (5 + Math.random() * 5) + "s";
-
-      petal.style.animationDelay =
-        (Math.random() * 2) + "s";
-
-      document.body.appendChild(petal);
-
-      const duration =
-        parseFloat(petal.style.animationDuration) * 1000;
-
-      const delay =
-        parseFloat(petal.style.animationDelay) * 1000;
-
-      setTimeout(() => petal.remove(), duration + delay + 500);
-    }
+    setTimeout(() => petal.remove(), (duration + delay + 1) * 1000);
   }
+}
 
-  // Bloom flowers and drop petals when the website opens.
-  createPetals();
+function openInvitation() {
+  if (opened) return;
+  opened = true;
 
+  // Hide the opening screen.
+  welcome.classList.add("hidden");
+  document.body.classList.remove("locked");
 
-  // -------------------------------------
-  // SHARE THE PUBLISHED INVITATION
-  // -------------------------------------
+  // Reveal the complete invitation.
+  invitation.classList.add("revealed");
 
-  async function shareInvitation() {
-    const details = {
-      title: "Munir & Afreen — Engagement Invitation",
-      text:
-        "You're invited to Munir & Afreen's engagement ceremony " +
-        "on 16 November 2026 at 7:00 PM. " +
-        "Venue: Ruby Ratna Bhandar, Datala Road, Chandrapur.",
-      url: window.location.href
-    };
-
-    if (navigator.share) {
-      try {
-        await navigator.share(details);
-      } catch (error) {
-        // The visitor may cancel the sharing window.
-      }
-    } else {
-      const message =
-        details.text + "\n" + details.url;
-
-      window.open(
-        "https://wa.me/?text=" + encodeURIComponent(message),
-        "_blank",
-        "noopener,noreferrer"
-      );
-    }
-  }
-
-
-  // -------------------------------------
-  // KEYBOARD NAVIGATION
-  // -------------------------------------
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "ArrowRight") {
-      showScreen(Math.min(currentScreen + 1, screens.length - 1));
-    }
-
-    if (event.key === "ArrowLeft") {
-      showScreen(Math.max(currentScreen - 1, 0));
-    }
+  // Bloom all four floral decorations.
+  flowers.forEach((flower, index) => {
+    setTimeout(() => {
+      flower.classList.add("bloom");
+    }, index * 180);
   });
+
+  // Start the opening shower of petals.
+  createPetals(45);
+
+  // Keep a gentle, occasional petal animation running.
+  petalTimer = setInterval(() => {
+    createPetals(6);
+  }, 4500);
+}
+
+openButton.addEventListener("click", openInvitation);
+
+
+// Share the real published website URL.
+document.getElementById("shareButton").addEventListener("click", async event => {
+  event.preventDefault();
+
+  const details = {
+    title: "Munir & Afreen — Engagement Invitation",
+    text:
+      "You're invited to Munir & Afreen's engagement ceremony " +
+      "on Monday, 16 November 2026, at 7:00 PM onwards. " +
+      "Venue: Ruby Ratna Bhandar, Datala Road, Chandrapur.",
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(details);
+    } catch (error) {
+      // The visitor may close the share dialog.
+    }
+  } else {
+    const whatsappText = details.text + "\n" + details.url;
+
+    window.open(
+      "https://wa.me/?text=" + encodeURIComponent(whatsappText),
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }
+});
 </script>
 
 </body>
