@@ -1,1 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Munir & Afreen | Engagement Ceremony</title>
+
+  <meta name="description"
+        content="With joy in our hearts, we invite you to celebrate the engagement of Munir and Afreen on 16 November 2026.">
+
+  <meta name="theme-color" content="#4a252d">
+
+  <style>
+    :root {
+      --rose-gold: #d9a08c;
+      --rose-light: #f4d7ce;
+      --rose-dark: #9d625d;
+      --burgundy: #49252d;
+      --cream: #fff8f2;
+      --gold: #e8c69a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at top, #78464b 0%, #301820 65%, #160e13 100%);
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Main invitation */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .invitation {
+      width: 100%;
+      max-width: 460px;
+      min-height: 790px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      border: 1px solid rgba(232, 198, 154, 0.8);
+      border-radius: 4px;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(34, 19, 23, 0.56),
+          rgba(57, 28, 34, 0.68)
+        ),
+        radial-gradient(
+          circle at 50% 35%,
+          #93635d,
+          #40252c 70%
+        );
+      box-shadow:
+        0 0 25px rgba(217, 160, 140, 0.16),
+        0 20px 70px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      padding: 52px 24px 36px;
+    }
+
+    /* Decorative border */
+
+    .invitation::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(244, 215, 206, 0.45);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .invitation::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(232, 198, 154, 0.15);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 3;
+      opacity: 0;
+      animation: appear 1.3s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--rose-light);
+      font-size: 10px;
+      margin-bottom: 17px;
+    }
+
+    h1 {
+      font-weight: normal;
+      font-size: clamp(28px, 8vw, 40px);
+      font-style: italic;
+      line-height: 1.25;
+      color: #fff2e9;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.9;
+      letter-spacing: 1px;
+      color: #f8e1d7;
+    }
+
+    /* Rings */
+
+    .rings {
+      font-size: 60px;
+      margin: 27px auto 24px;
+      color: var(--rose-light);
+      filter: drop-shadow(0 0 12px rgba(217, 160, 140, 0.35));
+      animation: ringFloat 3s ease-in-out infinite;
+    }
+
+    .ampersand {
+      color: var(--gold);
+      font-size: 24px;
+      font-style: italic;
+    }
+
+    .names {
+      margin: 14px -10px 18px;
+      font-size: clamp(30px, 8.5vw, 43px);
+      line-height: 1.5;
+      font-style: italic;
+      font-weight: normal;
+      color: #f7d9ce;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin: 20px auto;
+      color: var(--gold);
+    }
+
+    .divider span {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold)
+      );
+    }
+
+    .divider span:last-child {
+      transform: rotate(180deg);
+    }
+
+    .divider b {
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+    /* Date and venue */
+
+    .date {
+      margin-top: 18px;
+      color: #fff0e8;
+      font-size: 23px;
+      font-style: italic;
+    }
+
+    .time {
+      margin-top: 8px;
+      color: var(--rose-light);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .venue-heading {
+      margin-top: 31px;
+      font-size: 24px;
+      font-style: italic;
+      color: #fff0e8;
+    }
+
+    .venue {
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.9;
+      color: #f4d7ce;
+    }
+
+    /* Countdown */
+
+    .countdown-section {
+      margin-top: 32px;
+    }
+
+    .countdown-title {
+      font-family: Arial, sans-serif;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      margin-bottom: 14px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+    }
+
+    .time-box {
+      padding: 13px 2px;
+      background: rgba(255, 235, 224, 0.08);
+      border: 1px solid rgba(232, 198, 154, 0.38);
+      border-radius: 3px;
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: 23px;
+      font-weight: normal;
+      color: #ffe6d8;
+    }
+
+    .time-box small {
+      display: block;
+      margin-top: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--rose-light);
+    }
+
+    .closing {
+      margin-top: 27px;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.8;
+      color: #f8e1d7;
+    }
+
+    /* Action buttons */
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-top: 23px;
+    }
+
+    .btn {
+      min-height: 45px;
+      padding: 13px 16px;
+      border-radius: 3px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(
+        135deg,
+        #f2d3c5,
+        #c98e7c
+      );
+      color: #3d2025;
+      border: 1px solid #f2d3c5;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(244, 215, 206, 0.6);
+      color: #ffe7dd;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    /* Flower decorations */
+
+    .flower {
+      position: absolute;
+      z-index: 2;
+      width: 115px;
+      height: 145px;
+      opacity: 0;
+      color: #f4d7ce;
+      pointer-events: none;
+      filter: drop-shadow(0 0 4px rgba(217, 160, 140, 0.3));
+    }
+
+    .flower svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .flower path,
+    .flower ellipse,
+    .flower circle {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.05;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .flower-top-left {
+      top: 10px;
+      left: 8px;
+      transform-origin: top left;
+      animation: bloomLeft 1.5s ease-out forwards;
+    }
+
+    .flower-top-right {
+      top: 10px;
+      right: 8px;
+      transform-origin: top right;
+      animation: bloomRight 1.5s ease-out forwards;
+    }
+
+    .flower-bottom-left {
+      bottom: 12px;
+      left: 8px;
+      transform-origin: bottom left;
+      animation: bloomLeft 1.8s ease-out 0.2s forwards;
+    }
+
+    .flower-bottom-right {
+      bottom: 12px;
+      right: 8px;
+      transform-origin: bottom right;
+      animation: bloomRight 1.8s ease-out 0.2s forwards;
+    }
+
+    /* Floating petals */
+
+    .petals {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .petal {
+      position: absolute;
+      top: -20px;
+      width: 9px;
+      height: 13px;
+      background: linear-gradient(
+        135deg,
+        #f7dfd1,
+        #b97970
+      );
+      border-radius: 80% 10% 80% 10%;
+      opacity: 0;
+      animation: fall linear forwards;
+    }
+
+    /* Entrance and flower animations */
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes ringFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes bloomLeft {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(-35deg);
+      }
+      65% {
+        opacity: 0.9;
+        transform: scale(1.08) rotate(5deg);
+      }
+      100% {
+        opacity: 0.9;
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    @keyframes bloomRight {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(35deg);
+      }
+      65% {
+        opacity: 0.9;
+        transform: scale(1.08) rotate(-5deg);
+      }
+      100% {
+        opacity: 0.9;
+        transform: scale(1) rotate(0);
+      }
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.85;
+      }
+      90% {
+        opacity: 0.65;
+      }
+      100% {
+        transform: translateY(850px) rotate(500deg);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 380px) {
+      .invitation {
+        min-height: 740px;
+        padding: 45px 19px 28px;
+      }
+
+      .flower {
+        width: 85px;
+        height: 110px;
+      }
+
+      .rings {
+        font-size: 48px;
+      }
+
+      .date {
+        font-size: 20px;
+      }
+
+      .time-box strong {
+        font-size: 19px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      .flower {
+        opacity: 0.9;
+      }
+
+      .content {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <article class="invitation">
+
+      <!-- Floating petals are generated using JavaScript -->
+      <div class="petals" id="petals" aria-hidden="true"></div>
+
+      <!-- Top-left floral decoration -->
+      <div class="flower flower-top-left" aria-hidden="true">
+        <svg viewBox="0 0 120 150">
+          <path d="M5 5 Q35 35 22 70 Q15 95 40 115"/>
+          <path d="M18 36 Q45 22 40 7 Q18 10 18 36Z"/>
+          <path d="M24 55 Q55 45 55 28 Q31 31 24 55Z"/>
+          <path d="M26 76 Q55 65 61 49 Q36 51 26 76Z"/>
+          <path d="M31 96 Q60 87 66 70 Q43 71 31 96Z"/>
+          <path d="M40 114 Q70 107 75 90 Q51 91 40 114Z"/>
+          <path d="M15 27 Q3 42 15 51 Q29 40 15 27Z"/>
+          <path d="M21 63 Q6 78 19 86 Q32 76 21 63Z"/>
+          <path d="M39 19 C20 4 36 -1 45 9 C55 -4 70 10 54 22Z"/>
+          <path d="M39 19 L49 31 L54 22"/>
+          <path d="M50 122 Q80 122 85 143"/>
+        </svg>
+      </div>
+
+      <!-- Top-right floral decoration -->
+      <div class="flower flower-top-right" aria-hidden="true">
+        <svg viewBox="0 0 120 150">
+          <path d="M115 5 Q85 35 98 70 Q105 95 80 115"/>
+          <path d="M102 36 Q75 22 80 7 Q102 10 102 36Z"/>
+          <path d="M96 55 Q65 45 65 28 Q89 31 96 55Z"/>
+          <path d="M94 76 Q65 65 59 49 Q84 51 94 76Z"/>
+          <path d="M89 96 Q60 87 54 70 Q77 71 89 96Z"/>
+          <path d="M80 114 Q50 107 45 90 Q69 91 80 114Z"/>
+          <path d="M105 27 Q117 42 105 51 Q91 40 105 27Z"/>
+          <path d="M99 63 Q114 78 101 86 Q88 76 99 63Z"/>
+          <path d="M81 19 C100 4 84 -1 75 9 C65 -4 50 10 66 22Z"/>
+          <path d="M81 19 L71 31 L66 22"/>
+          <path d="M70 122 Q40 122 35 143"/>
+        </svg>
+      </div>
+
+      <!-- Bottom-left floral decoration -->
+      <div class="flower flower-bottom-left" aria-hidden="true">
+        <svg viewBox="0 0 120 150">
+          <path d="M5 145 Q35 115 25 82 Q20 60 42 37"/>
+          <path d="M20 119 Q45 106 43 89 Q24 91 20 119Z"/>
+          <path d="M27 91 Q53 80 54 64 Q34 67 27 91Z"/>
+          <path d="M35 65 Q61 53 59 37 Q42 40 35 65Z"/>
+          <path d="M43 40 Q65 26 62 10 Q47 15 43 40Z"/>
+          <path d="M12 133 Q-2 119 8 109 Q22 119 12 133Z"/>
+          <path d="M25 104 Q9 91 18 81 Q32 91 25 104Z"/>
+          <path d="M47 20 C29 7 44 -1 53 9 C62 -2 77 12 61 24Z"/>
+          <path d="M47 20 L55 33 L61 24"/>
+          <path d="M30 129 Q52 130 64 145"/>
+        </svg>
+      </div>
+
+      <!-- Bottom-right floral decoration -->
+      <div class="flower flower-bottom-right" aria-hidden="true">
+        <svg viewBox="0 0 120 150">
+          <path d="M115 145 Q85 115 95 82 Q100 60 78 37"/>
+          <path d="M100 119 Q75 106 77 89 Q96 91 100 119Z"/>
+          <path d="M93 91 Q67 80 66 64 Q86 67 93 91Z"/>
+          <path d="M85 65 Q59 53 61 37 Q78 40 85 65Z"/>
+          <path d="M77 40 Q55 26 58 10 Q73 15 77 40Z"/>
+          <path d="M108 133 Q122 119 112 109 Q98 119 108 133Z"/>
+          <path d="M95 104 Q111 91 102 81 Q88 91 95 104Z"/>
+          <path d="M73 20 C91 7 76 -1 67 9 C58 -2 43 12 59 24Z"/>
+          <path d="M73 20 L65 33 L59 24"/>
+          <path d="M90 129 Q68 130 56 145"/>
+        </svg>
+      </div>
+
+      <div class="content">
+
+        <p class="eyebrow">With joy in our hearts</p>
+
+        <h1>Engagement<br>Ceremony</h1>
+
+        <p class="subtitle">
+          Together with our families,<br>
+          we invite you to share our happiness
+        </p>
+
+        <div class="rings" aria-label="Engagement rings">
+          💍
+        </div>
+
+        <h2 class="names">
+          Munir <span class="ampersand">&amp;</span> Afreen
+        </h2>
+
+        <div class="divider">
+          <span></span>
+          <b>✧</b>
+          <span></span>
+        </div>
+
+        <p class="date">Monday, 16 November 2026</p>
+
+        <p class="time">7:00 PM onwards</p>
+
+        <h2 class="venue-heading">Venue</h2>
+
+        <p class="venue">
+          Ruby Ratna Bhandar<br>
+          Datala Road, Chandrapur
+        </p>
+
+        <section class="countdown-section"
+                 aria-label="Countdown to the engagement">
+
+          <p class="countdown-title">The celebration begins in</p>
+
+          <div class="countdown">
+
+            <div class="time-box">
+              <strong id="days">--</strong>
+              <small>Days</small>
+            </div>
+
+            <div class="time-box">
+              <strong id="hours">--</strong>
+              <small>Hours</small>
+            </div>
+
+            <div class="time-box">
+              <strong id="minutes">--</strong>
+              <small>Minutes</small>
+            </div>
+
+            <div class="time-box">
+              <strong id="seconds">--</strong>
+              <small>Seconds</small>
+            </div>
+
+          </div>
+        </section>
+
+        <p class="closing">
+          Your presence and blessings<br>
+          will make our day more special.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn btn-primary"
+            href="https://www.google.com/maps/dir/?api=1&amp;destination=Ruby+Ratna+Bhandar%2C+Datala+Road%2C+Chandrapur%2C+Maharashtra%2C+India"
+            target="_blank"
+            rel="noopener noreferrer">
+            📍 GET DIRECTIONS
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            id="shareButton"
+            href="https://wa.me/?text=You%27re%20invited%20to%20the%20engagement%20ceremony%20of%20Munir%20%26%20Afreen%20on%2016%20November%202026%20at%207%3A00%20PM%2C%20Ruby%20Ratna%20Bhandar%2C%20Datala%20Road%2C%20Chandrapur."
+            target="_blank"
+            rel="noopener noreferrer">
+            ♡ SHARE INVITATION
+          </a>
+
+        </div>
+
+        <p class="footer">A NEW CHAPTER BEGINS</p>
+
+      </div>
+    </article>
+  </main>
+
+  <script>
+    // ------------------------------------------
+    // 1. COUNTDOWN TO 16 NOVEMBER 2026, 7 PM IST
+    // ------------------------------------------
+
+    // India Standard Time is UTC+05:30.
+    const engagementDate = new Date("2026-11-16T19:00:00+05:30");
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    function updateCountdown() {
+      const now = Date.now();
+      const remaining = engagementDate.getTime() - now;
+
+      if (remaining <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+
+        document.querySelector(".countdown-title").textContent =
+          "The special day has arrived!";
+
+        return;
+      }
+
+      const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (remaining / (1000 * 60 * 60)) % 24
+      );
+      const minutes = Math.floor(
+        (remaining / (1000 * 60)) % 60
+      );
+      const seconds = Math.floor(
+        (remaining / 1000) % 60
+      );
+
+      daysEl.textContent = String(days).padStart(2, "0");
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+
+      setTimeout(updateCountdown, 1000);
+    }
+
+    updateCountdown();
+
+
+    // ------------------------------------------
+    // 2. FLOWERS AND PETALS ON EVERY PAGE LOAD
+    // ------------------------------------------
+
+    // The floral decorations bloom with CSS animations.
+    // Generate falling petals when a visitor opens or refreshes the page.
+
+    const petalsContainer = document.getElementById("petals");
+
+    function createPetals() {
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (reduceMotion) return;
+
+      // A new collection of petals is created on every page load.
+      for (let i = 0; i < 22; i++) {
+        const petal = document.createElement("span");
+
+        petal.className = "petal";
+
+        petal.style.left = Math.random() * 100 + "%";
+        petal.style.animationDuration =
+          (4 + Math.random() * 5) + "s";
+
+        petal.style.animationDelay =
+          (Math.random() * 3) + "s";
+
+        petal.style.transform =
+          "rotate(" + Math.random() * 360 + "deg)";
+
+        petalsContainer.appendChild(petal);
+
+        // Remove finished petals to keep the page lightweight.
+        const duration =
+          parseFloat(petal.style.animationDuration) * 1000;
+
+        const delay =
+          parseFloat(petal.style.animationDelay) * 1000;
+
+        setTimeout(() => {
+          petal.remove();
+        }, duration + delay + 200);
+      }
+    }
+
+    createPetals();
+
+
+    // ------------------------------------------
+    // 3. SHARE THE INVITATION
+    // ------------------------------------------
+
+    // Use the browser's native sharing feature when available.
+    // This shares the actual published website URL.
+
+    const shareButton = document.getElementById("shareButton");
+
+    if (navigator.share) {
+      shareButton.addEventListener("click", async function (event) {
+        event.preventDefault();
+
+        try {
+          await navigator.share({
+            title: "Munir & Afreen — Engagement Ceremony",
+            text: "Join us for our engagement on 16 November 2026 at 7 PM!",
+            url: window.location.href
+          });
+        } catch (error) {
+          // A visitor may cancel the sharing dialog.
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
