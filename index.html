@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Munir & Afreen | Engagement Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -42,9 +44,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 55px 22px;
+  padding: 45px 22px;
   overflow: hidden;
   scroll-snap-align: start;
+
   background:
     radial-gradient(ellipse at 15% 15%, #e8c9b86b, transparent 35%),
     radial-gradient(ellipse at 90% 85%, #b58a782b, transparent 34%),
@@ -64,45 +67,46 @@ h1, h2, h3, .names {
 }
 
 h1 {
-  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-size: clamp(2.8rem, 10vw, 6rem);
   line-height: .95;
-  margin: 20px 0;
+  margin: 18px 0;
   color: var(--deep-rose);
 }
 
 h2 {
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-size: clamp(2.3rem, 7vw, 4rem);
   line-height: 1;
-  margin: 14px 0 22px;
+  margin: 15px 0 22px;
   color: var(--deep-rose);
 }
 
 h3 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
   margin: 12px 0;
 }
 
 p {
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: .22em;
+  letter-spacing: .18em;
   font-size: .72rem;
   color: var(--deep-rose);
 }
 
 .bismillah {
   font-family: 'Amiri', serif;
-  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
   color: var(--deep-rose);
+  margin-bottom: 12px;
 }
 
 .subtitle {
-  letter-spacing: .15em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  font-size: .82rem;
+  font-size: .75rem;
 }
 
 .divider {
@@ -110,7 +114,7 @@ p {
   align-items: center;
   gap: 12px;
   justify-content: center;
-  margin: 24px auto;
+  margin: 20px auto;
   color: var(--gold);
 }
 
@@ -118,12 +122,12 @@ p {
 .divider::after {
   content: "";
   height: 1px;
-  width: 70px;
+  width: 60px;
   background: var(--gold);
 }
 
 .names {
-  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-size: clamp(3rem, 10vw, 6rem);
   color: var(--deep-rose);
   line-height: 1;
 }
@@ -135,22 +139,22 @@ p {
 }
 
 .date {
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  letter-spacing: .08em;
+  font-size: clamp(.9rem, 3vw, 1.15rem);
+  letter-spacing: .04em;
 }
 
 .button {
   display: inline-block;
   border: 1px solid var(--deep-rose);
-  color: var(--ivory);
+  color: white;
   background: var(--deep-rose);
-  padding: 13px 25px;
-  margin-top: 22px;
+  padding: 12px 23px;
+  margin-top: 18px;
   border-radius: 30px;
   text-decoration: none;
   font: inherit;
-  letter-spacing: .07em;
   font-size: .78rem;
+  letter-spacing: .05em;
   cursor: pointer;
   transition: .3s;
 }
@@ -160,57 +164,24 @@ p {
   background: var(--rose);
 }
 
-/* Decorative corner flowers */
-.floral {
-  position: absolute;
-  display: block;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  line-height: 1;
-  opacity: 1;
-  z-index: 5;
-  pointer-events: none;
-  user-select: none;
-}
-
-.tl { top: 25px; left: 24px; }
-.tr { top: 25px; right: 24px; }
-.bl { bottom: 25px; left: 24px; }
-.br { bottom: 25px; right: 24px; }
-
-.scroll-cue {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: .68rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-}
-
-.scroll-cue span {
-  display: block;
-  font-size: 1.4rem;
-  animation: nudge 1.5s infinite;
-}
-
 .card {
   max-width: 720px;
   margin: auto;
-  padding: clamp(24px, 5vw, 48px);
+  padding: clamp(22px, 5vw, 45px);
   background: #fffaf5e8;
   box-shadow: 0 18px 60px #875b5014;
 }
 
 .arabic-quote {
   font-family: 'Amiri', serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
   color: var(--deep-rose);
 }
 
 .venue-box {
   margin: 22px auto 0;
   max-width: 560px;
-  padding: 24px;
+  padding: 20px 12px;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
 }
@@ -218,7 +189,7 @@ p {
 .map-preview {
   display: block;
   max-width: 540px;
-  margin: 22px auto 0;
+  margin: 20px auto 0;
   overflow: hidden;
   background: #f2e6dc;
   color: var(--deep-rose);
@@ -249,51 +220,66 @@ p {
   color: var(--deep-rose);
 }
 
+/* Countdown on the first page */
 .countdown {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 28px 0;
+  margin: 22px 0;
 }
 
 .time-box {
-  min-width: 75px;
-  padding: 16px 12px;
-  background: #fffaf5dd;
+  min-width: 65px;
+  padding: 12px 10px;
+  background: #fffaf5e8;
   border: 1px solid #b58a7870;
 }
 
 .time-box strong {
   display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
+  font-size: clamp(1.7rem, 6vw, 2.5rem);
   color: var(--deep-rose);
 }
 
 .time-box span {
-  font-size: .65rem;
+  font-size: .6rem;
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
 }
 
-/* Falling rose petals */
+/* Falling petals: no corner flowers */
 .petal {
   position: fixed;
   top: -30px;
-  z-index: 20;
+  left: 0;
+  z-index: 10;
   pointer-events: none;
   width: 13px;
   height: 18px;
   border-radius: 80% 0 80% 0;
   background: linear-gradient(135deg, #f2d5c6, #b8796b);
   animation: fall linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate3d(0, -20px, 0) rotate(0deg);
+    opacity: .9;
+  }
+
+  100% {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(720deg);
+    opacity: .1;
+  }
 }
 
 .reveal {
   opacity: 0;
-  transform: translateY(35px);
-  transition: opacity .9s ease, transform .9s ease;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
 }
 
 .reveal.visible {
@@ -301,94 +287,100 @@ p {
   transform: translateY(0);
 }
 
-.bloom {
-  animation: bloom 1.5s ease both;
-}
-
 .fade-up {
-  animation: fadeUp 1.1s ease both;
+  animation: fadeUp 1s ease both;
 }
 
 .delay-1 { animation-delay: .2s; }
-.delay-2 { animation-delay: .45s; }
-.delay-3 { animation-delay: .7s; }
+.delay-2 { animation-delay: .4s; }
+.delay-3 { animation-delay: .6s; }
 
-@keyframes fall {
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
   to {
-    transform: translate3d(var(--drift), 110vh, 0) rotate(760deg);
-    opacity: .08;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes bloom {
-  0% { transform: scale(.25) rotate(-18deg); opacity: 0; }
-  65% { transform: scale(1.12) rotate(5deg); opacity: 1; }
-  100% { transform: scale(1) rotate(0); opacity: 1; }
+.scroll-cue {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  z-index: 3;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+.scroll-cue span {
+  display: block;
+  font-size: 1.3rem;
+  animation: nudge 1.5s infinite;
 }
 
 @keyframes nudge {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(7px); }
+  50% { transform: translateY(6px); }
 }
 
-/* Mobile fixes */
+/* Mobile layout */
 @media (max-width: 600px) {
   .page {
-    padding: 65px 18px;
-  }
-
-  .floral {
-    font-size: 2.4rem;
-    opacity: 1;
-  }
-
-  .tl { top: 12px; left: 12px; }
-  .tr { top: 12px; right: 12px; }
-  .bl { bottom: 12px; left: 12px; }
-  .br { bottom: 12px; right: 12px; }
-
-  .scroll-cue {
-    bottom: 5px;
-    font-size: .55rem;
+    padding: 30px 17px;
   }
 
   .card {
-    padding: 24px 18px;
+    padding: 22px 17px;
   }
 
-  .venue-box {
-    padding: 18px 10px;
+  .countdown {
+    gap: 7px;
+    margin: 18px 0;
   }
 
   .time-box {
-    min-width: 65px;
-    padding: 12px 7px;
+    min-width: 59px;
+    padding: 10px 6px;
   }
 
   .time-box strong {
     font-size: 1.8rem;
   }
+
+  .time-box span {
+    font-size: .55rem;
+  }
+
+  .venue-box {
+    padding: 18px 8px;
+  }
+
+  .scroll-cue {
+    bottom: 5px;
+  }
 }
 
-/* Keep flowers visible even when reduced motion is enabled */
+/* Accessibility: petals remain enabled */
 @media (prefers-reduced-motion: reduce) {
-  .floral {
-    animation: none !important;
-    opacity: 1 !important;
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
   }
 
   .reveal {
     opacity: 1;
     transform: none;
+    transition: none;
   }
 
-  html {
-    scroll-snap-type: none;
+  .scroll-cue span {
+    animation: none;
   }
 }
 </style>
@@ -396,154 +388,42 @@ p {
 
 <body>
 
-<!-- PAGE 1 -->
+<!-- PAGE 1: INVITATION + COUNTDOWN -->
 <section class="page" id="welcome">
-  <span class="floral tl">🌹</span>
-  <span class="floral tr">🌿</span>
-  <span class="floral bl">🌿</span>
-  <span class="floral br">🌹</span>
 
   <div class="content">
-    <p class="bismillah bloom">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+    <p class="bismillah fade-up">
+      بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+    </p>
 
     <p class="eyebrow fade-up delay-1">
       In the name of Allah, the Most Gracious, the Most Merciful
     </p>
 
-    <div class="divider fade-up delay-2">✧</div>
+    <div class="divider fade-up delay-1">✧</div>
 
-    <p class="subtitle fade-up delay-2">
+    <p class="subtitle fade-up delay-1">
       With hearts full of gratitude and joy
     </p>
 
-    <h1 class="fade-up delay-3">
+    <h1 class="fade-up delay-2">
       Engagement<br>Invitation
     </h1>
 
-    <p class="date fade-up delay-3">MUNIR & AFREEN</p>
+    <div class="names fade-up delay-2">
+      Munir <span class="amp">&</span> Afreen
+    </div>
 
-    <a class="button fade-up delay-3" href="#invitation">
-      EXPLORE THE INVITATION ↓
-    </a>
-  </div>
-
-  <div class="scroll-cue">Scroll to discover <span>⌄</span></div>
-</section>
-
-<!-- PAGE 2 -->
-<section class="page" id="invitation">
-  <span class="floral tl">🌸</span>
-  <span class="floral tr">🌿</span>
-  <span class="floral bl">🌿</span>
-  <span class="floral br">🌸</span>
-
-  <div class="content card reveal">
-    <p class="eyebrow">A beautiful new chapter begins</p>
-
-    <h2>Two hearts,<br>one beautiful journey</h2>
+    <p class="date fade-up delay-3">
+      MONDAY · 16 NOVEMBER 2026 · 7:00 PM
+    </p>
 
     <div class="divider">❧</div>
 
-    <p class="arabic-quote">
-      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
-    </p>
+    <p class="eyebrow">Countdown to our special day</p>
 
-    <p>
-      <em>
-        “And among His signs is that He created for you spouses from among yourselves.”
-      </em>
-    </p>
-
-    <p>
-      With the blessings of Allah and the love of our families,
-      we warmly invite you to celebrate the engagement of
-    </p>
-
-    <div class="names">Munir <span class="amp">&</span> Afreen</div>
-
-    <p class="date">
-      MONDAY · 16 NOVEMBER 2026 · 7:00 PM ONWARDS
-    </p>
-  </div>
-
-  <div class="scroll-cue">Continue scrolling <span>⌄</span></div>
-</section>
-
-<!-- PAGE 3 -->
-<section class="page" id="venue">
-  <span class="floral tl">🌹</span>
-  <span class="floral tr">🌿</span>
-  <span class="floral bl">🌿</span>
-  <span class="floral br">🌹</span>
-
-  <div class="content reveal">
-    <p class="eyebrow">Together with our families</p>
-
-    <h2>Welcome to the<br>Sayyed Family</h2>
-
-    <div class="divider">✧</div>
-
-    <p>
-      It would mean the world to us to have you with us
-      as we celebrate this special occasion.
-    </p>
-
-    <div class="venue-box">
-      <p class="eyebrow">Save the date</p>
-
-      <h3>Monday, 16 November 2026</h3>
-
-      <p>7:00 PM onwards</p>
-
-      <div class="divider">❧</div>
-
-      <p class="eyebrow">Venue</p>
-
-      <h3>Ruby Ratna Bhandar</h3>
-
-      <p>Datala Road, Chandrapur</p>
-
-      <a
-        class="map-preview"
-        href="https://www.google.com/maps/search/?api=1&query=Ruby+Ratna+Bhandar%2C+Datala+Road%2C+Chandrapur"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open venue in Google Maps"
-      >
-        <img
-          src="https://maps.googleapis.com/maps/api/staticmap?center=Ruby%20Ratna%20Bhandar%2C%20Datala%20Road%2C%20Chandrapur&zoom=14&size=900x390&scale=2&maptype=roadmap&markers=color:0x875b50%7CRuby%20Ratna%20Bhandar%2C%20Datala%20Road%2C%20Chandrapur"
-          alt="Map preview of Ruby Ratna Bhandar, Chandrapur"
-          loading="lazy"
-          onerror="this.style.display='none';"
-        >
-
-        <span class="map-label">
-          📍 <strong>View location in Google Maps ↗</strong>
-        </span>
-      </a>
-
-      <p style="font-size:.75rem">
-        Tap the map to open the location in Google Maps.
-      </p>
-    </div>
-  </div>
-
-  <div class="scroll-cue">One more page <span>⌄</span></div>
-</section>
-
-<!-- PAGE 4 -->
-<section class="page" id="thank-you">
-  <span class="floral tl">🌸</span>
-  <span class="floral tr">🌿</span>
-  <span class="floral bl">🌿</span>
-  <span class="floral br">🌸</span>
-
-  <div class="content reveal">
-    <p class="eyebrow">The countdown begins</p>
-
-    <h2>Until our special day</h2>
-
-    <div class="countdown" aria-label="Countdown to engagement">
+    <div class="countdown" aria-label="Engagement countdown">
       <div class="time-box">
         <strong id="days">--</strong>
         <span>Days</span>
@@ -565,108 +445,259 @@ p {
       </div>
     </div>
 
+    <a class="button" href="#invitation">
+      EXPLORE OUR INVITATION ↓
+    </a>
+
+  </div>
+
+  <div class="scroll-cue">Scroll to discover <span>⌄</span></div>
+</section>
+
+
+<!-- PAGE 2: ISLAMIC BLESSING -->
+<section class="page" id="invitation">
+
+  <div class="content card reveal">
+
+    <p class="eyebrow">A beautiful new chapter begins</p>
+
+    <h2>Two hearts,<br>one beautiful journey</h2>
+
     <div class="divider">❧</div>
 
-    <h2>With love & duas</h2>
-
-    <p>
-      Thank you for being part of our happiness.<br>
-      Your presence and blessings mean everything to us.
+    <p class="arabic-quote">
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
     </p>
 
-    <div class="names" style="font-size:clamp(2.8rem,8vw,5rem)">
+    <p>
+      <em>
+        “And among His signs is that He created for you spouses
+        from among yourselves.”
+      </em>
+    </p>
+
+    <p>
+      With the blessings of Allah and the love of our families,
+      we warmly invite you to celebrate the engagement of
+    </p>
+
+    <div class="names">
       Munir <span class="amp">&</span> Afreen
     </div>
 
-    <p class="eyebrow" style="margin-top:28px">
-      May Allah bless this new beginning
+    <p class="date">
+      MONDAY · 16 NOVEMBER 2026 · 7:00 PM ONWARDS
     </p>
+
+    <a class="button" href="#venue">VIEW THE VENUE ↓</a>
+
+  </div>
+
+  <div class="scroll-cue">Continue scrolling <span>⌄</span></div>
+</section>
+
+
+<!-- PAGE 3: VENUE -->
+<section class="page" id="venue">
+
+  <div class="content reveal">
+
+    <p class="eyebrow">Together with our families</p>
+
+    <h2>Join us for<br>our special day</h2>
+
+    <div class="divider">✧</div>
+
+    <p>
+      It would mean the world to us to have you with us
+      as we celebrate this special occasion.
+    </p>
+
+    <div class="venue-box">
+
+      <p class="eyebrow">Save the date</p>
+
+      <h3>Monday, 16 November 2026</h3>
+
+      <p>7:00 PM onwards</p>
+
+      <div class="divider">❧</div>
+
+      <p class="eyebrow">Venue</p>
+
+      <h3>Ruby Ratna Bhandar</h3>
+
+      <p>Datala Road, Chandrapur</p>
+
+      <a
+        class="map-preview"
+        href="https://www.google.com/maps/search/?api=1&query=Ruby+Ratna+Bhandar%2C+Datala+Road%2C+Chandrapur"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open venue in Google Maps"
+      >
+
+        <img
+          src="https://maps.googleapis.com/maps/api/staticmap?center=Ruby%20Ratna%20Bhandar%2C%20Datala%20Road%2C%20Chandrapur&zoom=14&size=900x390&scale=2&maptype=roadmap&markers=color:0x875b50%7CRuby%20Ratna%20Bhandar%2C%20Datala%20Road%2C%20Chandrapur"
+          alt="Map preview of the engagement venue"
+          loading="lazy"
+          onerror="this.style.display='none';"
+        >
+
+        <span class="map-label">
+          📍 <strong>Open location in Google Maps ↗</strong>
+        </span>
+
+      </a>
+
+      <p style="font-size:.75rem">
+        Tap above to open the venue in Google Maps.
+      </p>
+
+    </div>
+
+    <div class="divider">✧</div>
+
+    <h3>With love & duas</h3>
+
+    <p>
+      May Allah bless this new beginning with happiness,
+      peace, love, and countless blessings.
+    </p>
+
+    <div class="names" style="font-size:clamp(2.8rem,8vw,4.5rem)">
+      Munir <span class="amp">&</span> Afreen
+    </div>
+
   </div>
 </section>
 
+
 <script>
-/* Falling rose petals */
-const prefersReducedMotion =
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* =========================================
+   FALLING PETALS
+   Starts automatically on page load.
+   Also works on mobile after refreshing.
+========================================= */
 
-function makePetal() {
-  if (document.hidden) return;
-
+function createPetal() {
   const petal = document.createElement('span');
 
   petal.className = 'petal';
   petal.setAttribute('aria-hidden', 'true');
 
+  // Random horizontal starting position
   petal.style.left = Math.random() * 100 + 'vw';
 
+  // Random sideways movement
   petal.style.setProperty(
     '--drift',
     (Math.random() * 160 - 80) + 'px'
   );
 
-  petal.style.animationDuration =
-    (7 + Math.random() * 5) + 's';
+  // Random falling speed
+  const duration = 6 + Math.random() * 6;
+  petal.style.animationDuration = duration + 's';
 
-  petal.style.opacity =
-    (0.4 + Math.random() * 0.45).toString();
+  // Random size and transparency
+  const size = 10 + Math.random() * 8;
+  petal.style.width = size + 'px';
+  petal.style.height = (size * 1.3) + 'px';
+  petal.style.opacity = (0.45 + Math.random() * 0.45).toString();
 
   document.body.appendChild(petal);
 
-  setTimeout(() => petal.remove(), 13000);
+  // Remove petals after their animation finishes
+  setTimeout(() => {
+    petal.remove();
+  }, (duration + 1) * 1000);
 }
 
-/* Do not animate petals if the user requests reduced motion */
-if (!prefersReducedMotion) {
-  for (let i = 0; i < 8; i++) {
-    setTimeout(makePetal, i * 350);
+// Create petals immediately when the website opens
+function startPetals() {
+  for (let i = 0; i < 12; i++) {
+    setTimeout(createPetal, i * 180);
   }
-
-  setInterval(makePetal, 850);
 }
 
-/* Scroll reveal animation */
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
+// Start when the page has loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startPetals);
+} else {
+  startPetals();
+}
 
-  document.querySelectorAll('.reveal').forEach((section) => {
-    revealObserver.observe(section);
+// Continue creating petals while the page is visible
+setInterval(() => {
+  if (!document.hidden) {
+    createPetal();
+  }
+}, 650);
+
+// Restart a small burst when returning to the browser tab
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    for (let i = 0; i < 5; i++) {
+      setTimeout(createPetal, i * 200);
+    }
+  }
+});
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  document.querySelectorAll('.reveal').forEach((element) => {
+    observer.observe(element);
   });
 } else {
-  document.querySelectorAll('.reveal').forEach((section) => {
-    section.classList.add('visible');
+  document.querySelectorAll('.reveal').forEach((element) => {
+    element.classList.add('visible');
   });
 }
 
-/* Countdown: 16 November 2026, 7:00 PM India time */
-const eventDate = new Date('2026-11-16T19:00:00+05:30').getTime();
+
+/* =========================================
+   COUNTDOWN
+   16 November 2026, 7:00 PM IST
+========================================= */
+
+const engagementDate =
+  new Date('2026-11-16T19:00:00+05:30').getTime();
 
 function updateCountdown() {
-  let remaining = eventDate - Date.now();
+  const now = Date.now();
+  let remaining = engagementDate - now;
 
   if (remaining <= 0) {
-    ['days', 'hours', 'minutes', 'seconds'].forEach((id) => {
-      document.getElementById(id).textContent = '0';
-    });
+    document.getElementById('days').textContent = '0';
+    document.getElementById('hours').textContent = '0';
+    document.getElementById('minutes').textContent = '0';
+    document.getElementById('seconds').textContent = '0';
     return;
   }
 
-  const days = Math.floor(remaining / 86400000);
-  remaining %= 86400000;
+  const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+  remaining %= (1000 * 60 * 60 * 24);
 
-  const hours = Math.floor(remaining / 3600000);
-  remaining %= 3600000;
+  const hours = Math.floor(remaining / (1000 * 60 * 60));
+  remaining %= (1000 * 60 * 60);
 
-  const minutes = Math.floor(remaining / 60000);
-  const seconds = Math.floor((remaining % 60000) / 1000);
+  const minutes = Math.floor(remaining / (1000 * 60));
+  const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
 
   document.getElementById('days').textContent = days;
   document.getElementById('hours').textContent = hours;
@@ -680,3 +711,4 @@ setInterval(updateCountdown, 1000);
 
 </body>
 </html>
+```
